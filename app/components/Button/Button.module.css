@@ -1,0 +1,96 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.fullWidth {
+    width: 100%;
+    display: flex;
+    /* Ensure gap works if display was inline-flex */
+}
+
+.button:focus-visible {
+    box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 4px hsl(var(--color-primary));
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Sizes */
+.sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+.md {
+    padding: 0.5rem 1rem;
+}
+
+.lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.icon {
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Variants */
+.primary {
+    background-color: hsl(var(--color-primary));
+    color: hsl(var(--neutral-0));
+    border: 1px solid hsl(var(--color-primary));
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.primary:hover:not(:disabled) {
+    background-color: hsl(var(--color-primary-dark));
+    border-color: hsl(var(--color-primary-dark));
+}
+
+.secondary {
+    background-color: hsl(var(--bg-surface));
+    border: 1px solid hsl(var(--neutral-300));
+    color: hsl(var(--text-main));
+    box-shadow: var(--shadow-sm);
+}
+
+.secondary:hover:not(:disabled) {
+    background-color: hsl(var(--neutral-50));
+    border-color: hsl(var(--neutral-400));
+}
+
+.ghost {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: hsl(var(--text-muted));
+}
+
+/* .ghost:hover:not(:disabled) {
+    color: hsl(var(--text-main));
+    background-color: hsl(var(--neutral-100));
+} */
+
+.danger {
+    background-color: hsl(var(--danger));
+    color: hsl(var(--neutral-0));
+    border: 1px solid hsl(var(--danger));
+}
+
+.danger:hover:not(:disabled) {
+    opacity: 0.9;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}

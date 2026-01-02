@@ -1,0 +1,27 @@
+.card {
+    background-color: hsl(var(--bg-surface));
+    border: 1px solid hsl(var(--border-default));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid hsl(var(--border-default));
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.footer {
+    padding: 1rem 1.5rem;
+    background-color: hsl(var(--neutral-100));
+    border-top: 1px solid hsl(var(--border-default));
+}

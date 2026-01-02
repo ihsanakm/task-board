@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    height: auto;
+    min-height: 60px;
+    border-bottom: 1px solid hsl(var(--neutral-0) / 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    background-color: hsl(var(--bg-nav));
+    color: hsl(var(--text-on-dark));
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 1.125rem;
+}
+
+.headerActions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.adminLink {
+    font-size: 0.875rem;
+    color: white;
+    opacity: 0.9;
+}
+
+.adminLink:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.signOutButton {
+    font-size: 0.875rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.userAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: hsl(var(--color-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: hsl(var(--color-light));
+}
+
+.main {
+    flex: 1;
+    overflow: hidden;
+    background-color: hsl(var(--bg-app));
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding: 0 1rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .headerActions {
+        gap: 0.75rem;
+    }
+
+    .adminLink,
+    .signOutButton {
+        font-size: 0.8rem;
+    }
+}

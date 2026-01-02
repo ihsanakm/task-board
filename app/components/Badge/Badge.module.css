@@ -1,0 +1,45 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+/* Variants */
+.neutral {
+    background-color: hsl(var(--neutral-200));
+    color: hsl(var(--neutral-700));
+    border: 1px solid transparent;
+    /* Simple pill */
+}
+
+.primary {
+    background-color: hsl(var(--color-primary) / 0.1);
+    color: hsl(var(--color-primary));
+    border: 1px solid hsl(var(--color-primary) / 0.2);
+}
+
+.success {
+    background-color: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.2);
+}
+
+.warning {
+    background-color: hsl(var(--warning) / 0.15);
+    /* Slightly more opacity for yellow visibility */
+    color: hsl(var(--warning) / 0.8);
+    /* Darker text */
+    color: #b45309;
+    /* Fallback for contrast */
+    border: 1px solid hsl(var(--warning) / 0.3);
+}
+
+.danger {
+    background-color: hsl(var(--danger) / 0.1);
+    color: hsl(var(--danger));
+    border: 1px solid hsl(var(--danger) / 0.2);
+}

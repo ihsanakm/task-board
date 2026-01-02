@@ -1,0 +1,76 @@
+.card {
+    background-color: hsl(var(--bg-surface));
+    border: 1px solid hsl(var(--border-default));
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+    cursor: grab;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    /* Prevent text selection during drag */
+    user-select: none;
+    touch-action: manipulation;
+}
+
+@media (hover: hover) {
+    .card:hover {
+        border-color: hsl(var(--color-primary) / 0.3);
+        box-shadow: var(--shadow-md);
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        padding: 0.875rem;
+    }
+}
+
+.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+    box-shadow: var(--shadow-lg);
+    border-color: hsl(var(--color-dark));
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.title {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: hsl(var(--text-main));
+    line-height: 1.4;
+}
+
+.description {
+    font-size: 0.8125rem;
+    color: hsl(var(--text-muted));
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 0.25rem;
+}
+
+.dueDate {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: hsl(var(--text-muted));
+}

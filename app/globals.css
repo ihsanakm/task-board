@@ -1,26 +1,159 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Brand / Primary - Professional Blue */
+  --color-primary: 226 70% 55%;
+  --color-primary-dark: 226 70% 45%;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Neutrals */
+  --neutral-0: 0 0% 100%;
+  /* White */
+  --neutral-50: 210 20% 98%;
+  /* App Background */
+  --neutral-100: 210 20% 96%;
+  /* Column Background (Default) */
+  --neutral-200: 214 15% 90%;
+  /* Borders */
+  --neutral-300: 214 10% 80%;
+  --neutral-600: 215 15% 50%;
+  /* Subtext */
+  --neutral-700: 215 20% 35%;
+  /* Body Text */
+  --neutral-800: 215 25% 20%;
+  /* Sidebar / Sub-nav */
+  --neutral-900: 215 28% 15%;
+  /* Navbar / Headings */
+
+  /* Column Tints (Backgrounds & Borders) */
+  /* To Do: Light Blue/Gray */
+  --col-todo-bg: 210 50% 97%;
+  --col-todo-border: 210 30% 90%;
+
+  /* In Progress: Soft Purple */
+  --col-progress-bg: 250 50% 97%;
+  --col-progress-border: 250 30% 90%;
+
+  /* Review: Soft Amber */
+  --col-review-bg: 35 60% 97%;
+  --col-review-border: 35 40% 90%;
+
+  /* Done: Soft Green */
+  --col-done-bg: 145 40% 97%;
+  --col-done-border: 145 25% 90%;
+
+  /* Accents (formerly borders) - Strong for minimal indicators */
+  --col-todo-accent: 210 60% 50%;
+  /* Professional Blue */
+  --col-progress-accent: 260 50% 55%;
+  /* Muted Purple */
+  --col-review-accent: 35 70% 50%;
+  /* Focus Amber */
+  --col-done-accent: 150 50% 45%;
+  /* Calm Green */
+
+  /* Semantic Mappings */
+  --bg-app: hsl(var(--neutral-50));
+  --bg-nav: hsl(var(--neutral-900));
+  --bg-sidebar: hsl(var(--neutral-800));
+  --bg-surface: hsl(var(--neutral-0));
+
+  --text-main: hsl(var(--neutral-900));
+  --text-body: hsl(var(--neutral-700));
+  --text-on-dark: hsl(var(--neutral-0));
+  --text-muted: hsl(var(--neutral-600));
+
+  --border-default: hsl(var(--neutral-200));
+  --border-hover: hsl(var(--color-primary) / 0.5);
+
+  --color-light: var(--neutral-100);
+  /* Legacy support if needed */
+  --color-dark: var(--neutral-900);
+
+  /* Legacy Compatibility (Admin & Other modules) */
+  --primary-50: 215 70% 97%;
+  --primary-100: 215 70% 94%;
+  --primary-200: 215 70% 88%;
+  --primary-300: 215 65% 75%;
+  --primary-400: 215 65% 65%;
+  --primary-500: var(--color-primary);
+  --primary-600: var(--color-primary-dark);
+  --primary-700: 215 70% 35%;
+  --primary-800: 215 70% 25%;
+  --primary-900: 215 70% 15%;
+
+  /* Priorities */
+  --priority-high: 0 75% 60%;
+  --priority-med: 35 85% 60%;
+  --priority-low: 150 60% 40%;
+
+  /* Functional Colors */
+  --success: 150 70% 35%;
+  --warning: 35 85% 55%;
+  --danger: 0 75% 55%;
+  --info: 210 70% 50%;
+
+  /* UI Tokens */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark Mode Overrides (Refined) */
+    --bg-app: 222 47% 10%;
+    --bg-nav: 222 47% 8%;
+    --bg-sidebar: 217 33% 13%;
+    --bg-surface: 217 33% 15%;
+
+    --text-main: var(--neutral-50);
+    --text-body: 215 20% 80%;
+    --text-muted: 215 15% 60%;
+
+    --border-default: 215 20% 25%;
+
+    /* Dark Column Tints - Subtle Shifts */
+    --col-todo-bg: 215 30% 18%;
+    --col-todo-border: 215 30% 25%;
+
+    --col-progress-bg: 250 30% 18%;
+    --col-progress-border: 250 30% 25%;
+
+    --col-review-bg: 35 30% 18%;
+    --col-review-border: 35 30% 25%;
+
+    --col-done-bg: 145 30% 18%;
+    --col-done-border: 145 30% 25%;
   }
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(var(--text-body));
+  background: hsl(var(--bg-app));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
 }
