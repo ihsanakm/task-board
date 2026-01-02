@@ -25,15 +25,19 @@
     animation: slideUp 0.2s ease-out;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .modal {
-        max-height: 100vh;
-        border-radius: 0;
-        border: none;
+        max-height: 95dvh;
+        border-radius: var(--radius-lg);
+        /* keep some radius */
+        margin-bottom: 2rem;
+        /* space for address bar */
     }
 
     .overlay {
-        padding: 0;
+        padding: 0.5rem;
+        align-items: flex-end;
+        /* push to bottom for easier thumb access */
     }
 }
 

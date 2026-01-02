@@ -7,6 +7,7 @@ import {
     closestCorners,
     KeyboardSensor,
     PointerSensor,
+    TouchSensor,
     useSensor,
     useSensors,
     DragStartEvent,
@@ -96,6 +97,10 @@ export function BoardLayout({ isGuest = false }: BoardLayoutProps) {
     const sensors = useSensors(
         useSensor(PointerSensor, {
             activationConstraint: { distance: 5 } // Avoid accidental drags on click
+        }),
+        useSensor(TouchSensor, {
+            // Touch delay allows the user to scroll horizontally without accidentally picking up a card
+            activationConstraint: { delay: 250, tolerance: 5 }
         }),
         useSensor(KeyboardSensor, {
             coordinateGetter: sortableKeyboardCoordinates,

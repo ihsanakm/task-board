@@ -5,8 +5,9 @@
     overflow-x: auto;
     padding: 1.5rem;
     height: 100%;
-    scroll-snap-type: x mandatory;
+    /* removed scroll-snap for better drag and drop feel */
     scroll-padding: 0 1.5rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 .header {
@@ -70,7 +71,7 @@
     top: 100%;
     left: 0;
     margin-top: 0.5rem;
-    min-width: 220px;
+    min-width: 260px;
     background-color: hsl(var(--bg-nav));
     border: 1px solid hsl(var(--neutral-0) / 0.1);
     border-radius: var(--radius-lg);
@@ -122,10 +123,11 @@
     font-weight: bold;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .boardContainer {
-        gap: 1rem;
-        padding: 0 1rem 1rem 1rem;
+        gap: 1.25rem;
+        padding: 1rem 1rem 2rem 1rem;
+        /* More breathing space at top/bottom */
         scroll-padding: 0 1rem;
     }
 
@@ -135,12 +137,18 @@
 
     .projectLabel {
         display: none;
-        /* Hide label on mobile to save space */
     }
 
     .dropdownTrigger {
         font-size: 1rem;
         padding: 0.375rem 0.5rem;
+    }
+
+    /* Prevent dropdown from going off-screen on the right */
+    .dropdownMenu {
+        left: auto;
+        right: -1rem;
+        min-width: 280px;
     }
 }
 
