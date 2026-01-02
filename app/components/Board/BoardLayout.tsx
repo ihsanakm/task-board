@@ -5,6 +5,7 @@ import {
     DndContext,
     DragOverlay,
     closestCorners,
+    closestCenter,
     KeyboardSensor,
     PointerSensor,
     TouchSensor,
@@ -489,7 +490,7 @@ export function BoardLayout({ isGuest = false }: BoardLayoutProps) {
 
             <DndContext
                 sensors={sensors}
-                collisionDetection={closestCorners}
+                collisionDetection={closestCenter}
                 onDragStart={handleDragStart}
                 onDragOver={handleDragOver}
                 onDragEnd={handleDragEnd}

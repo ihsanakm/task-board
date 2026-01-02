@@ -11,8 +11,9 @@
     gap: 0.75rem;
 
     /* Prevent text selection during drag */
+    /* Prevent text selection and vertical scroll interference during drag */
     user-select: none;
-    touch-action: manipulation;
+    touch-action: none;
 }
 
 @media (hover: hover) {
