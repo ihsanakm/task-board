@@ -493,6 +493,13 @@ export function BoardLayout({ isGuest = false }: BoardLayoutProps) {
                 onDragStart={handleDragStart}
                 onDragOver={handleDragOver}
                 onDragEnd={handleDragEnd}
+                autoScroll={{
+                    threshold: {
+                        x: 0.1, // Start scrolling when within 10% of the edge
+                        y: 0.1,
+                    },
+                    acceleration: 10,
+                }}
             >
                 <div className={styles.boardContainer}>
                     {columns.map((col) => (

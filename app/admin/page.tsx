@@ -562,7 +562,6 @@ export default function AdminPage() {
                         className={styles.projectSelect}
                         value={currentProjectId}
                         onChange={(e) => setCurrentProjectId(e.target.value)}
-                        style={{ marginLeft: '1rem' }}
                     >
                         <option value="all">All Projects</option>
                         {projects.map(p => (
