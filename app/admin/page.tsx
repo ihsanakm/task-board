@@ -124,7 +124,7 @@ export default function AdminPage() {
     // Filtered Data
     const filteredTasks = useMemo(() => {
         if (currentProjectId === 'all') return tasks;
-        return tasks.filter(t => (t as any).project_id === currentProjectId);
+        return tasks.filter(t => t.projectId === currentProjectId);
     }, [tasks, currentProjectId]);
 
     const totalTasks = filteredTasks.length;
@@ -336,9 +336,9 @@ export default function AdminPage() {
                         priority: data[0].priority,
                         dueDate: data[0].due_date,
                         assigneeId: data[0].assignee_id,
-                        project_id: data[0].project_id,
+                        projectId: data[0].project_id,
                         attachments: data[0].attachments || []
-                    } as any;
+                    } as Task;
                     setTasks([...tasks, newTask]);
                 }
             }
@@ -781,7 +781,7 @@ export default function AdminPage() {
                                             <td className={styles.td}>{task.title}</td>
                                             <td className={styles.td}><Badge variant={task.status === 'Done' ? 'success' : 'neutral'}>{task.status}</Badge></td>
                                             <td className={styles.td}>{users.find(u => u.id === task.assigneeId)?.name || 'Unassigned'}</td>
-                                            <td className={styles.td}>{projects.find(p => p.id === (task as any).project_id)?.name || 'Unknown'}</td>
+                                            <td className={styles.td}>{projects.find(p => p.id === task.projectId)?.name || 'Unknown'}</td>
                                             <td className={styles.td}>
                                                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                                                     <Button variant="ghost" size="icon" onClick={() => { setEditingTask(task); setIsTaskModalOpen(true); }}>
@@ -826,7 +826,7 @@ export default function AdminPage() {
                                 </thead>
                                 <tbody>
                                     {projects.map((project) => {
-                                        const projectTasksCount = tasks.filter(t => (t as any).project_id === project.id).length;
+                                        const projectTasksCount = tasks.filter(t => t.projectId === project.id).length;
                                         return (
                                             <tr key={project.id} className={styles.tr}>
                                                 <td className={styles.td}>
